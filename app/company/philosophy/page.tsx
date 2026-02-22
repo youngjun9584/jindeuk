@@ -14,21 +14,25 @@ export default function PhilosophyPage() {
       title: '신뢰',
       description: '고객과의 약속을 반드시 지키며, 투명한 경영으로 신뢰를 쌓아갑니다.',
       icon: '🤝',
+      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80',
     },
     {
       title: '혁신',
       description: '끊임없는 기술 개발과 창의적인 사고로 건설업계를 선도합니다.',
       icon: '💡',
+      image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&q=80',
     },
     {
       title: '안전',
       description: '안전은 모든 것에 우선합니다. 무재해 현장을 목표로 합니다.',
       icon: '🛡️',
+      image: 'https://images.unsplash.com/photo-1590496793907-4127ce8c5533?w=400&q=80',
     },
     {
       title: '품질',
       description: '최고의 품질로 고객 만족을 실현하고 영구적인 가치를 창출합니다.',
       icon: '⭐',
+      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&q=80',
     },
   ]
 

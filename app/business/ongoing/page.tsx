@@ -86,9 +86,10 @@ export default function OngoingProjectsPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {projects.map((project, index) => (
                 <div key={index} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="h-48 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                    <span className="text-gray-500 text-sm">현장 사진</span>
-                  </div>
+                  <div 
+                    className="h-48 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  />
                   
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-3">

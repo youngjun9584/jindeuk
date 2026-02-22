@@ -7,27 +7,30 @@ import Container from '@/components/ui/Container'
 const esgItems = [
   {
     id: 1,
-    title: 'Environment',
-    subtitle: '환경',
-    description: '환경경영과 안전·보건경영을 통해 기업의 건강,\n사회의 건강, 그리고 지구의 건강을 지킵니다.',
-    gradient: 'from-green-500 to-emerald-600',
-    icon: '🌱',
+    title: 'Technology',
+    subtitle: '기술력',
+    description: '160명 이상의 전문 기술 인력과\n180대 이상의 최신 장비로 최고의 기술력을 제공합니다.',
+    gradient: 'from-blue-500 to-cyan-600',
+    icon: '⚙️',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80',
   },
   {
     id: 2,
-    title: 'Social',
-    subtitle: '사회',
-    description: '사회의 일원으로서 고객, 임직원,\n지역사회에 대한 사회적 책임을 다합니다.',
-    gradient: 'from-blue-500 to-cyan-600',
-    icon: '👥',
+    title: 'Quality',
+    subtitle: '품질',
+    description: 'ISO 9001 인증을 통한 체계적인 품질관리로\n고객에게 최상의 시공 품질을 보장합니다.',
+    gradient: 'from-green-500 to-emerald-600',
+    icon: '⭐',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80',
   },
   {
     id: 3,
-    title: 'Governance',
-    subtitle: '지배구조',
-    description: '책임경영과 윤리경영을 통해 주주 및\n이해관계자의 권익 보호에 최선을 다합니다.',
-    gradient: 'from-purple-500 to-indigo-600',
-    icon: '⚖️',
+    title: 'Safety',
+    subtitle: '안전',
+    description: 'KOSHA-MS 인증 및 무재해 목표로\n모든 작업 현장에서 안전을 최우선으로 합니다.',
+    gradient: 'from-red-500 to-orange-600',
+    icon: '🛡️',
+    image: 'https://images.unsplash.com/photo-1590496793907-4127ce8c5533?w=600&q=80',
   },
 ]
 
@@ -43,10 +46,10 @@ export default function ESGSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Trust promise
+            핵심 가치
           </h2>
           <p className="text-lg text-gray-600">
-            진덕건설은 지속가능경영을 위해 ESG 전략을 수립하여 실천해나가고 있습니다.
+            진덕건설은 기술, 품질, 안전을 최우선 가치로 삼아 최고의 건설 서비스를 제공합니다.
           </p>
         </motion.div>
 
@@ -61,8 +64,13 @@ export default function ESGSection() {
               className="group"
             >
               <div className="relative h-[450px] rounded-2xl overflow-hidden shadow-lg transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105">
-                {/* Background Image Placeholder */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient}`} />
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                />
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-75`} />
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-300" />

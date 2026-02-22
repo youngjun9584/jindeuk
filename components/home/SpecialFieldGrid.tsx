@@ -7,51 +7,59 @@ import Container from '@/components/ui/Container'
 const fields = [
   {
     id: 1,
-    title: '주거시설 건설',
-    description: '아파트, 주상복합, 오피스텔 등 다양한 주거 공간 건설',
+    title: '단지조성공',
+    description: '택지 개발 및 산업단지 조성 전문',
     gradient: 'from-blue-500 to-cyan-500',
+    image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=600&q=80',
   },
   {
     id: 2,
-    title: '상업시설 건설',
-    description: '쇼핑몰, 오피스빌딩, 호텔 등 상업용 건축물 시공',
+    title: '건축토공',
+    description: '터파기, 성토, 정지 등 건축 토공 전문',
     gradient: 'from-purple-500 to-pink-500',
+    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80',
   },
   {
     id: 3,
-    title: '교량 및 도로',
-    description: '대형 교량, 고속도로, 도시 간선도로 건설',
+    title: '흙막이가시설공',
+    description: '안전한 굴착을 위한 흙막이 및 가시설 시공',
     gradient: 'from-green-500 to-teal-500',
+    image: 'https://images.unsplash.com/photo-1590496793907-4127ce8c5533?w=600&q=80',
   },
   {
     id: 4,
-    title: '터널 공사',
-    description: '산악 터널, 지하차도, 해저 터널 등 전문 터널 시공',
+    title: '보링그라우팅공',
+    description: '지반 조사 및 보강을 위한 보링·그라우팅',
     gradient: 'from-orange-500 to-red-500',
+    image: 'https://images.unsplash.com/photo-1572981779307-52e0489b3663?w=600&q=80',
   },
   {
     id: 5,
-    title: '리모델링',
-    description: '노후 건축물 리모델링 및 재건축 사업',
+    title: '구조물공',
+    description: '교량, 터널 등 각종 콘크리트 구조물 시공',
     gradient: 'from-indigo-500 to-blue-500',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
   },
   {
     id: 6,
-    title: '해외 프로젝트',
-    description: '동남아, 중동 지역 건설 프로젝트 수주 및 시공',
-    gradient: 'from-yellow-500 to-orange-500',
+    title: '상하수도공',
+    description: '상수도 및 하수도 관로 설치 전문',
+    gradient: 'from-cyan-500 to-blue-500',
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80',
   },
   {
     id: 7,
-    title: '스마트 건설',
-    description: 'BIM, IoT 기반 스마트 건설 기술 적용',
+    title: '포장공',
+    description: '아스팔트 및 콘크리트 포장 시공',
     gradient: 'from-pink-500 to-rose-500',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80',
   },
   {
     id: 8,
-    title: '친환경 건축',
-    description: '제로에너지 건축물, 녹색건축 인증 프로젝트',
+    title: '기초공사',
+    description: '파일, 현장타설말뚝 등 건축물 기초 시공',
     gradient: 'from-teal-500 to-green-500',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80',
   },
 ]
 
@@ -67,11 +75,11 @@ export default function SpecialFieldGrid() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Special Field
+            전문 시공 분야
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            진덕건설은 폭넓고 다채로운 분야에서,<br />
-            최고의 기술력과 품질로 고객의 꿈을 실현합니다.
+            진덕건설만의 기술과 품질이 적용된<br />
+            다양한 전문 공종 시공 능력을 보유하고 있습니다.
           </p>
         </motion.div>
 
@@ -86,8 +94,13 @@ export default function SpecialFieldGrid() {
               className="group cursor-pointer"
             >
               <div className="relative h-[320px] rounded-xl overflow-hidden shadow-lg transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105">
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${field.gradient}`} />
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${field.image})` }}
+                />
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${field.gradient} opacity-75`} />
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300" />

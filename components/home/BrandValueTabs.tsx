@@ -6,22 +6,22 @@ import Container from '@/components/ui/Container'
 
 const tabs = [
   {
-    id: 'customer',
+    id: 'technology',
+    label: 'Technology',
+    title: '기술력',
+    content: '진덕건설은 160명 이상의 전문 기술 인력과 180대 이상의 최신 장비를 보유하고 있습니다.\n오랜 경험과 노하우를 바탕으로 모든 프로젝트에서 최상의 기술력을 발휘하며,\n지속적인 연구개발을 통해 건설 기술의 혁신을 이끌어갑니다.',
+  },
+  {
+    id: 'quality',
     label: 'Quality',
-    title: '품질 우선',
-    content: '진덕건설은 최고의 품질을 최우선으로 생각합니다.\n안전하고 견고한 건축물을 통해 고객의 만족과 신뢰를 얻고, 품질 경영을 통해 지속 가능한 가치를 창출합니다.',
+    title: '품질 관리',
+    content: '진덕건설은 ISO 9001 품질경영시스템 인증을 통해 체계적인 품질 관리를 실천합니다.\n설계부터 시공, 준공까지 전 과정에서 엄격한 품질 기준을 적용하며,\n고객에게 최상의 품질을 제공하기 위해 최선을 다합니다.',
   },
   {
-    id: 'global',
+    id: 'safety',
     label: 'Safety',
-    title: '안전 경영',
-    content: '진덕건설은 안전을 가장 중요한 가치로 삼습니다. 무재해 사업장 구현을 목표로 체계적인 안전관리 시스템을 운영하며, 모든 임직원과 협력업체가 안전한 환경에서 일할 수 있도록 최선을 다합니다.',
-  },
-  {
-    id: 'innovation',
-    label: 'Innovation',
-    title: '혁신과 기술',
-    content: '진덕건설은 첨단 건설 기술과 혁신을 바탕으로 합니다.\nBIM, 스마트 건설 등 최신 기술을 도입하고,\n변화하는 건설 환경에 능동적으로 대응하며 지속적으로 성장합니다.',
+    title: '안전 최우선',
+    content: '진덕건설은 안전을 모든 경영활동의 최우선 가치로 삼습니다.\nKOSHA-MS 및 ISO 45001 인증을 통한 체계적인 안전관리 시스템을 운영하며,\n무재해 현장 구현을 목표로 모든 임직원이 안전하게 일할 수 있는 환경을 만듭니다.',
   },
 ]
 
@@ -43,7 +43,7 @@ export default function BrandValueTabs() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
-                OUR Brand Value<br />& Vision
+                진덕건설의<br />핵심 경쟁력
               </h2>
 
               <div className="space-y-4">

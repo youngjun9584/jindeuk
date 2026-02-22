@@ -7,27 +7,30 @@ import Container from '@/components/ui/Container'
 const subsidiaries = [
   {
     id: 1,
-    country: 'Korea',
-    countryKo: '한국',
-    logo: '진덕개발',
-    description: '부동산 개발 및 투자 전문 기업으로, 주거 및 상업용 부동산 개발을 통해 새로운 가치를 창출합니다.',
+    country: 'Projects',
+    countryKo: '200+',
+    logo: '누적 프로젝트',
+    description: '다양한 건설 프로젝트를 성공적으로 완수하며\n토목, 건축, 플랜트 분야에서 풍부한 경험을 축적했습니다.',
     gradient: 'from-blue-600 to-blue-800',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80',
   },
   {
     id: 2,
-    country: 'Vietnam',
-    countryKo: '베트남',
-    logo: 'JINDUK Vietnam',
-    description: '베트남 하노이에 위치한 현지 법인으로 동남아시아 건설 시장에서 빠르게 성장하고 있습니다.',
-    gradient: 'from-red-600 to-red-800',
+    country: 'On-time',
+    countryKo: '99%',
+    logo: '납기 준수율',
+    description: '체계적인 공정 관리와 효율적인 시공으로\n납기를 철저히 준수하여 고객 신뢰를 확보합니다.',
+    gradient: 'from-green-600 to-green-800',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
   },
   {
     id: 3,
-    country: 'UAE',
-    countryKo: '아랍에미리트',
-    logo: 'JINDUK Middle East',
-    description: 'UAE 두바이를 거점으로 중동 지역 건설 프로젝트를 수행하며 글로벌 역량을 강화하고 있습니다.',
-    gradient: 'from-amber-600 to-amber-800',
+    country: 'Satisfaction',
+    countryKo: '98%',
+    logo: '고객 만족도',
+    description: '최상의 품질과 서비스로 고객 만족을 실현하며\n장기적인 신뢰 관계를 구축하고 있습니다.',
+    gradient: 'from-purple-600 to-purple-800',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
   },
 ]
 
@@ -43,11 +46,11 @@ export default function GlobalSubsidiary() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            GLOBAL NETWORK
+            시공 실적
           </h2>
           <p className="text-lg text-gray-300">
-            진덕건설의 글로벌 네트워크<br />
-            전 세계를 무대로 건설의 새로운 미래를 개척합니다.
+            진덕건설의 우수한 시공 실적<br />
+            다양한 프로젝트를 성공적으로 완수하며 신뢰를 쌓아왔습니다.
           </p>
         </motion.div>
 
@@ -62,8 +65,13 @@ export default function GlobalSubsidiary() {
               className="group cursor-pointer"
             >
               <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl transition-all duration-300 group-hover:shadow-2xl group-hover:scale-105">
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${sub.gradient}`} />
+                {/* Background Image */}
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${sub.image})` }}
+                />
+                {/* Gradient Overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${sub.gradient} opacity-80`} />
                 
                 {/* Content */}
                 <div className="relative h-full flex flex-col justify-between p-8 text-white">

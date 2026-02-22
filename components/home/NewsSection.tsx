@@ -8,37 +8,42 @@ import Button from '@/components/ui/Button'
 const newsItems = [
   {
     id: 1,
-    title: '진덕건설, 강남 재건축 사업 수주',
-    date: '2026.02.10',
-    image: true,
+    title: '2024년 설 연휴 운영 안내',
+    date: '2024.02.01',
+    category: '공지',
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
     gradient: 'from-blue-400 to-blue-600',
   },
   {
     id: 2,
-    title: '베트남 하노이 오피스빌딩 프로젝트 착공',
-    date: '2026.02.05',
-    image: true,
+    title: '2024년 상반기 경력직 채용 공고',
+    date: '2024.01.28',
+    category: '채용',
+    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80',
     gradient: 'from-green-400 to-green-600',
   },
   {
     id: 3,
-    title: '친환경 건축 기술 개발로 녹색건축 인증 획득',
-    date: '2026.01.28',
-    image: false,
+    title: '건설안전대상 수상 소식',
+    date: '2024.01.25',
+    category: '수상',
+    image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=600&q=80',
     gradient: 'from-emerald-400 to-emerald-600',
   },
   {
     id: 4,
-    title: 'BIM 기반 스마트 건설 시스템 도입',
-    date: '2026.01.20',
-    image: true,
+    title: '○○ 아파트 신축공사 착공식 개최',
+    date: '2024.01.15',
+    category: '사업',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80',
     gradient: 'from-purple-400 to-purple-600',
   },
   {
     id: 5,
-    title: '2025년 안전대상 수상',
-    date: '2026.01.15',
-    image: true,
+    title: '품질경영 우수기업 선정',
+    date: '2024.01.10',
+    category: '수상',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80',
     gradient: 'from-orange-400 to-orange-600',
   },
 ]
@@ -55,10 +60,10 @@ export default function NewsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            News
+            새로운 소식
           </h2>
           <p className="text-lg text-gray-600">
-            최신 소식과 다양한 프로젝트 소식을 확인해보세요.
+            진덕건설의 최신 소식과 다양한 프로젝트 정보를 확인하세요.
           </p>
         </motion.div>
 
@@ -73,19 +78,13 @@ export default function NewsSection() {
               className="group cursor-pointer"
             >
               <div className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-2">
-                {/* Image Placeholder */}
-                <div className={`relative h-48 bg-gradient-to-br ${news.gradient}`}>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-20 h-20 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                      </svg>
-                    </div>
-                  </div>
+                {/* Image */}
+                <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: `url(${news.image})` }}>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all"></div>
                   
-                  {/* View More Badge */}
+                  {/* Category Badge */}
                   <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-gray-800">
-                    View More
+                    {news.category}
                   </div>
                 </div>
 
@@ -103,8 +102,8 @@ export default function NewsSection() {
 
         {/* View More Button */}
         <div className="text-center">
-          <Button variant="outline" size="lg" href="/media">
-            View More
+          <Button variant="outline" size="lg" href="/customer/notices">
+            전체 소식 보기
           </Button>
         </div>
       </Container>

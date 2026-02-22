@@ -24,9 +24,10 @@ export default function CEOPage() {
           <div className="py-16">
             <div className="max-w-4xl mx-auto">
               <div className="mb-12 text-center">
-                <div className="w-48 h-48 mx-auto mb-6 bg-gray-200 rounded-full flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">CEO 사진</span>
-                </div>
+                <div 
+                  className="w-48 h-48 mx-auto mb-6 rounded-full bg-cover bg-center shadow-lg"
+                  style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80)' }}
+                />
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">대표이사 성명</h2>
                 <p className="text-gray-600">진덕건설 대표이사</p>
               </div>
