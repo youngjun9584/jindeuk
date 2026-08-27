@@ -105,9 +105,15 @@ export default function CompletedProjectsPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-green-600 to-green-800 text-white py-16">
-          <Container>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-green-900/90 to-green-700/90"></div>
+          </div>
+          <Container className="relative z-10">
             <h1 className="text-4xl font-bold mb-4">완료현장</h1>
             <p className="text-lg text-green-100">성공적으로 완료한 프로젝트를 소개합니다</p>
           </Container>

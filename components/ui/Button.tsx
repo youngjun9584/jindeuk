@@ -17,12 +17,12 @@ export default function Button({
   className = '',
   href,
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-md'
-  
+  const baseStyles = 'inline-flex items-center justify-center font-semibold tracking-wide transition-all duration-300'
+
   const variants = {
     primary: 'bg-primary text-white hover:bg-primary-light',
     secondary: 'bg-secondary text-white hover:bg-secondary-light',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+    outline: 'border border-gray-900 text-gray-900 hover:bg-primary hover:border-primary hover:text-white',
   }
   
   const sizes = {

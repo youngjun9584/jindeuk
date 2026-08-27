@@ -10,12 +10,12 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   const benefits = [
-    { title: '경쟁력 있는 연봉', description: '업계 최고 수준의 보상 체계', icon: '💰' },
-    { title: '복리후생', description: '4대 보험, 건강검진, 경조사 지원', icon: '🏥' },
-    { title: '교육 지원', description: '자격증 취득, 외부 교육 전액 지원', icon: '📚' },
-    { title: '휴가 제도', description: '연차, 하계휴가, 경조휴가', icon: '🏖️' },
-    { title: '성과 보상', description: '프로젝트 성과급, 우수사원 포상', icon: '🎁' },
-    { title: '경력 개발', description: '체계적인 승진 체계 및 경력 개발', icon: '📈' },
+    { title: '경쟁력 있는 연봉', description: '업계 최고 수준의 보상 체계' },
+    { title: '복리후생', description: '4대 보험, 건강검진, 경조사 지원' },
+    { title: '교육 지원', description: '자격증 취득, 외부 교육 전액 지원' },
+    { title: '휴가 제도', description: '연차, 하계휴가, 경조휴가' },
+    { title: '성과 보상', description: '프로젝트 성과급, 우수사원 포상' },
+    { title: '경력 개발', description: '체계적인 승진 체계 및 경력 개발' },
   ]
 
   const positions = [
@@ -96,9 +96,15 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <Container>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90"></div>
+          </div>
+          <Container className="relative z-10">
             <h1 className="text-4xl font-bold mb-4">채용정보</h1>
             <p className="text-lg text-blue-100">진덕건설과 함께 미래를 만들어갈 인재를 찾습니다</p>
           </Container>
@@ -123,9 +129,8 @@ export default function CareersPage() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">복리후생</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {benefits.map((benefit) => (
-                    <div key={benefit.title} className="bg-white border border-gray-200 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
-                      <div className="text-5xl mb-4">{benefit.icon}</div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+                    <div key={benefit.title} className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-blue-600 hover:shadow-lg transition-all">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
                       <p className="text-gray-700">{benefit.description}</p>
                     </div>
                   ))}

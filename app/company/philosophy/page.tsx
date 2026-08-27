@@ -13,35 +13,37 @@ export default function PhilosophyPage() {
     {
       title: '신뢰',
       description: '고객과의 약속을 반드시 지키며, 투명한 경영으로 신뢰를 쌓아갑니다.',
-      icon: '🤝',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&q=80',
+      number: '01',
     },
     {
       title: '혁신',
       description: '끊임없는 기술 개발과 창의적인 사고로 건설업계를 선도합니다.',
-      icon: '💡',
-      image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=400&q=80',
+      number: '02',
     },
     {
       title: '안전',
       description: '안전은 모든 것에 우선합니다. 무재해 현장을 목표로 합니다.',
-      icon: '🛡️',
-      image: 'https://images.unsplash.com/photo-1590496793907-4127ce8c5533?w=400&q=80',
+      number: '03',
     },
     {
       title: '품질',
       description: '최고의 품질로 고객 만족을 실현하고 영구적인 가치를 창출합니다.',
-      icon: '⭐',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&q=80',
+      number: '04',
     },
   ]
 
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <Container>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90"></div>
+          </div>
+          <Container className="relative z-10">
             <h1 className="text-4xl font-bold mb-4">경영이념</h1>
             <p className="text-lg text-blue-100">진덕건설의 핵심 가치와 비전</p>
           </Container>
@@ -62,10 +64,12 @@ export default function PhilosophyPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">핵심 가치</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {values.map((value) => (
-                    <div key={value.title} className="p-8 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-                      <div className="text-4xl mb-4">{value.icon}</div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h4>
-                      <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                    <div key={value.title} className="relative p-8 bg-white border-2 border-gray-200 rounded-lg hover:border-blue-600 hover:shadow-xl transition-all">
+                      <div className="absolute top-6 right-6 text-6xl font-bold text-gray-100">
+                        {value.number}
+                      </div>
+                      <h4 className="text-2xl font-bold text-gray-900 mb-4 relative z-10">{value.title}</h4>
+                      <p className="text-gray-700 leading-relaxed relative z-10">{value.description}</p>
                     </div>
                   ))}
                 </div>

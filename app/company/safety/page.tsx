@@ -13,22 +13,22 @@ export default function SafetyPage() {
     {
       title: '안전 최우선 원칙',
       description: '모든 작업에서 안전을 최우선으로 고려하며, 생산성보다 안전을 우선시합니다.',
-      icon: '🛡️',
+      number: '01',
     },
     {
       title: '무재해 현장 구현',
       description: '철저한 안전 관리를 통해 무재해 현장을 구현하고 지속적으로 유지합니다.',
-      icon: '✅',
+      number: '02',
     },
     {
       title: '안전교육 강화',
       description: '정기적인 안전 교육과 훈련을 통해 안전 의식을 고취합니다.',
-      icon: '📚',
+      number: '03',
     },
     {
       title: '위험요소 사전제거',
       description: '잠재적 위험 요소를 사전에 파악하고 제거하여 사고를 예방합니다.',
-      icon: '🔍',
+      number: '04',
     },
   ]
 
@@ -43,9 +43,15 @@ export default function SafetyPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <Container>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1590496793907-4127ce8c5533?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90"></div>
+          </div>
+          <Container className="relative z-10">
             <h1 className="text-4xl font-bold mb-4">안전보건방침</h1>
             <p className="text-lg text-blue-100">안전을 최우선으로 하는 진덕건설</p>
           </Container>
@@ -70,10 +76,12 @@ export default function SafetyPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">안전보건 핵심가치</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {policies.map((policy) => (
-                    <div key={policy.title} className="p-6 bg-white border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-                      <div className="text-4xl mb-4">{policy.icon}</div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-3">{policy.title}</h4>
-                      <p className="text-gray-700 leading-relaxed">{policy.description}</p>
+                    <div key={policy.title} className="relative p-8 bg-white border-l-4 border-blue-600 rounded-lg shadow-md hover:shadow-xl transition-all">
+                      <div className="absolute top-4 right-4 text-6xl font-bold text-gray-100">
+                        {policy.number}
+                      </div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-3 relative z-10">{policy.title}</h4>
+                      <p className="text-gray-700 leading-relaxed relative z-10">{policy.description}</p>
                     </div>
                   ))}
                 </div>

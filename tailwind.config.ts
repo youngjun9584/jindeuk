@@ -9,14 +9,34 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // 로고 아이콘에서 추출한 진덕건설 브랜드 남색
         primary: {
-          DEFAULT: '#1a1a1a',
-          light: '#333333',
+          DEFAULT: '#1B2877',
+          light: '#1C43A8',
+          dark: '#101A4D',
         },
         secondary: {
-          DEFAULT: '#0066cc',
-          light: '#3388dd',
+          DEFAULT: '#1C43A8',
+          light: '#3655B4',
         },
+        // 기존 페이지에서 쓰이던 Tailwind 기본 blue 팔레트를
+        // 브랜드 남색 톤으로 교체 (전 페이지 강조색이 로고와 통일됨)
+        blue: {
+          50: '#EEF1FA',
+          100: '#DCE4F6',
+          200: '#B7C7EC',
+          300: '#8CA3DD',
+          400: '#5C77C9',
+          500: '#34519F',
+          600: '#1C43A8',
+          700: '#1B2E82',
+          800: '#182568',
+          900: '#141B4D',
+          950: '#0B1130',
+        },
+      },
+      fontFamily: {
+        sans: ['var(--font-noto-sans-kr)', 'Pretendard', 'Apple SD Gothic Neo', 'sans-serif'],
       },
       keyframes: {
         fadeIn: {

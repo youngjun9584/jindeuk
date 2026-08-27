@@ -63,9 +63,15 @@ export default function CapabilityPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <Container>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90"></div>
+          </div>
+          <Container className="relative z-10">
             <h1 className="text-4xl font-bold mb-4">시공능력</h1>
             <p className="text-lg text-blue-100">진덕건설의 시공능력평가 순위 및 실적</p>
           </Container>

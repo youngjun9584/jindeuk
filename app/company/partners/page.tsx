@@ -35,9 +35,15 @@ export default function PartnersPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <Container>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90"></div>
+          </div>
+          <Container className="relative z-10">
             <h1 className="text-4xl font-bold mb-4">관계회사</h1>
             <p className="text-lg text-blue-100">진덕건설과 함께하는 파트너</p>
           </Container>
@@ -63,12 +69,9 @@ export default function PartnersPage() {
                     {categoryPartners.map((partner) => (
                       <div
                         key={partner.name}
-                        className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all hover:border-blue-400 text-center"
+                        className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:shadow-lg transition-all hover:border-blue-600 text-center"
                       >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
-                          <span className="text-gray-400 text-2xl">🏢</span>
-                        </div>
-                        <p className="font-medium text-gray-900">{partner.name}</p>
+                        <p className="font-bold text-lg text-gray-900">{partner.name}</p>
                       </div>
                     ))}
                   </div>

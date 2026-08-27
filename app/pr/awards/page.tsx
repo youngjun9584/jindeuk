@@ -75,9 +75,15 @@ export default function AwardsPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <Container>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-16 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-blue-700/90"></div>
+          </div>
+          <Container className="relative z-10">
             <h1 className="text-4xl font-bold mb-4">수상내역</h1>
             <p className="text-lg text-blue-100">진덕건설의 우수성을 인정받은 수상 내역입니다</p>
           </Container>
@@ -92,21 +98,16 @@ export default function AwardsPage() {
                     key={index}
                     className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
                   >
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                      <div className="flex items-center gap-4">
-                        <div className="flex-shrink-0 w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center text-3xl">
-                          🏆
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="px-4 py-2 bg-blue-600 text-white font-bold rounded-lg">
+                            {award.year}
+                          </span>
+                          <h3 className="text-xl font-bold text-gray-900">{award.title}</h3>
                         </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-gray-900 mb-1">{award.title}</h3>
-                          <p className="text-sm text-gray-600 mb-2">{award.organization}</p>
-                          <p className="text-gray-700">{award.description}</p>
-                        </div>
-                      </div>
-                      <div className="flex-shrink-0">
-                        <span className="inline-block px-4 py-2 bg-blue-100 text-blue-700 font-bold rounded-full">
-                          {award.year}
-                        </span>
+                        <p className="text-sm text-gray-600 mb-2 font-medium">{award.organization}</p>
+                        <p className="text-gray-700">{award.description}</p>
                       </div>
                     </div>
                   </div>

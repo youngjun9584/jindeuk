@@ -13,7 +13,7 @@ export default function ServicesPage() {
     {
       id: 'civil',
       title: '토목공사',
-      icon: '🏗️',
+      number: '01',
       description: '도로, 교량, 터널 등 사회 기반 시설 구축',
       details: [
         '도로 및 포장공사',
@@ -27,7 +27,7 @@ export default function ServicesPage() {
     {
       id: 'building',
       title: '건축공사',
-      icon: '🏢',
+      number: '02',
       description: '주거, 상업, 업무시설 등 다양한 건축물 시공',
       details: [
         '아파트 및 주상복합 건축',
@@ -41,7 +41,7 @@ export default function ServicesPage() {
     {
       id: 'plant',
       title: '플랜트공사',
-      icon: '⚙️',
+      number: '03',
       description: '산업 설비 및 환경 플랜트 시공',
       details: [
         '환경오염 방지시설',
@@ -55,7 +55,7 @@ export default function ServicesPage() {
     {
       id: 'foundation',
       title: '기초공사',
-      icon: '🔨',
+      number: '04',
       description: '건축물의 안정적인 기초 구축',
       details: [
         '흙막이 및 가시설 공사',
@@ -69,7 +69,7 @@ export default function ServicesPage() {
     {
       id: 'structure',
       title: '구조물공사',
-      icon: '🏛️',
+      number: '05',
       description: '각종 콘크리트 및 철골 구조물',
       details: [
         '콘크리트 구조물',
@@ -83,7 +83,7 @@ export default function ServicesPage() {
     {
       id: 'utilities',
       title: '설비공사',
-      icon: '🔧',
+      number: '06',
       description: '상하수도 및 각종 설비 시공',
       details: [
         '상수도 공사',
@@ -99,11 +99,17 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="pt-20">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <Container>
-            <h1 className="text-4xl font-bold mb-4">주요사업</h1>
-            <p className="text-lg text-blue-100">진덕건설의 전문 시공 분야를 소개합니다</p>
+      <div className="pt-[132px]">
+        <div className="relative bg-gray-900 text-white py-20 overflow-hidden">
+          <div 
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80)' }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/85 to-blue-800/85"></div>
+          </div>
+          <Container className="relative z-10">
+            <h1 className="text-5xl font-bold mb-4 drop-shadow-lg">주요사업</h1>
+            <p className="text-xl text-blue-50 drop-shadow-md">진덕건설의 전문 시공 분야를 소개합니다</p>
           </Container>
         </div>
 
@@ -114,22 +120,26 @@ export default function ServicesPage() {
                 <div
                   key={service.id}
                   id={service.id}
-                  className={`${
-                    index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  } flex flex-col lg:flex gap-8 items-center bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow`}
+                  className="bg-white border-2 border-gray-200 rounded-lg p-8 hover:border-blue-600 hover:shadow-xl transition-all"
                 >
-                  <div className="flex-shrink-0 w-full lg:w-1/3 text-center">
-                    <div className="text-8xl mb-4">{service.icon}</div>
-                    <h2 className="text-3xl font-bold text-gray-900">{service.title}</h2>
+                  <div className="flex items-start gap-6 mb-6">
+                    <div className="flex-shrink-0 w-24 h-24 bg-blue-600 text-white rounded-lg flex items-center justify-center">
+                      <span className="text-4xl font-bold">{service.number}</span>
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-3xl font-bold text-gray-900 mb-3">{service.title}</h2>
+                      <p className="text-lg text-gray-700">{service.description}</p>
+                    </div>
                   </div>
                   
-                  <div className="flex-1">
-                    <p className="text-lg text-gray-700 mb-6">{service.description}</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="pl-0 lg:pl-30">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {service.details.map((detail) => (
-                        <div key={detail} className="flex items-start">
-                          <span className="text-blue-600 mr-2">✓</span>
-                          <span className="text-gray-700">{detail}</span>
+                        <div key={detail} className="flex items-center p-3 bg-gray-50 rounded-lg">
+                          <svg className="w-5 h-5 text-blue-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-gray-700 font-medium">{detail}</span>
                         </div>
                       ))}
                     </div>
